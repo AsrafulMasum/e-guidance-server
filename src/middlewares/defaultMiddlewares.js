@@ -10,8 +10,8 @@ const middlewares = (app) => {
       credentials: true,
     })
   );
-  app.use(express.json());
-  app.use(cookieParser());
+  app.use(express.json()); 
+  app.use(cookieParser()); 
 };
 
 module.exports = { middlewares };

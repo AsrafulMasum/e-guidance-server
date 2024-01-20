@@ -7,7 +7,13 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
+const tokenApi = require("./src/routes/auth/auth");
+const userApi = require("./src/routes/users/user");
+
 middlewares(app);
+
+app.use(tokenApi);
+app.use(userApi);
 
 app.get("/health", (req, res) => {
   res.send("server is running data will be appear soon...");
